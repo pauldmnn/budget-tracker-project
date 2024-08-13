@@ -1,3 +1,7 @@
+def add_spending(spendings, description, amount):
+    spendings.append({"description": description, "amount": amount})
+    print(f"Added spending:{description}, Amount:{amount}")
+
 def main():
     """
     Runs the main function for the app
@@ -24,7 +28,10 @@ def main():
         
         elif choice == "3":
             print("You are exiting your budget tracker. Goodbye!")
-        break
+            break
         
         else:
-        print("Invalid choice. Please choose one of the following options again (1/2/3).")
+            print("Invalid choice. Please choose one of the following options again (1/2/3).")
+
+if __name__ == "__main__":
+    main()
