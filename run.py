@@ -2,6 +2,15 @@ def add_spending(spendings, description, amount):
     spendings.append({"description": description, "amount": amount})
     print(f"Added spending:{description}, Amount:{amount}")
 
+def display_budget_details(budget, spendings):
+    print(f"Total budget: {budget}")
+    print("Spendings:")
+    for spending in spendings:
+        print(f"- {spending['description']}: {spending['amount']}")
+    print(f"Total amount spent: {your_total_spendings(spendings)}")
+    print(f"Your remaining budget to spend: {your_balance(budget, spendings)}")
+
+
 def main():
     """
     Runs the main function for the app
