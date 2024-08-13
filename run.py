@@ -2,6 +2,15 @@ def add_spending(spendings, description, amount):
     spendings.append({"description": description, "amount": amount})
     print(f"Added spending:{description}, Amount:{amount}")
 
+def your_total_spendings(spendings):
+    sum = 0
+    for spending in spendings:
+        sum += spending["amount"]
+    return sum
+
+def your_balance(budget, spendings):
+    return budget - your_total_spendings(spendings)
+
 def display_budget_details(budget, spendings):
     print(f"Total budget: {budget}")
     print("Spendings:")
