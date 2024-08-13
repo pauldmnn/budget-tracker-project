@@ -1,3 +1,5 @@
+import json
+
 def add_spending(spendings, description, amount):
     spendings.append({"description": description, "amount": amount})
     print(f"Added spending:{description}, Amount:{amount}")
@@ -31,6 +33,14 @@ def load_your_budget_data(filepath):
         or is empty/corrupted
         """
         return 0, []  
+def save_your_budget(filepath, original_budget, spendings):
+    data = {
+        'original_budget': original_budget,
+        'spendings': spendings
+    }
+    with open(filepath, 'w') as file:
+        json.dump(data, file, indent=4)
+
 
 def main():
     """
@@ -39,9 +49,10 @@ def main():
     print("Welcome to your budget tracker")
     filepath = 'your_budget_data.json'
     original_budget, spendings = load_your_budget_data(filepath)
+    if original_budget == 0:
+        original_budget = float(input("Please enter amount of money you have to spend: "))
     budget = original_budget
-    spendings = []
-
+    
     while True:
         print("\n Choose what do you want to do.")
         print("1. Add spending")
@@ -58,6 +69,7 @@ def main():
             display_budget_details(budget, spendings)
         
         elif choice == "3":
+            save_your_budget(filepath, original_budget, spendings)
             print("You are exiting your budget tracker. Goodbye!")
             break
         
