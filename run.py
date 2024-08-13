@@ -1,10 +1,16 @@
 import json
 
 def add_spending(spendings, description, amount):
+    """
+    For the user to dat the description and amount of spendings
+    """
     spendings.append({"description": description, "amount": amount})
     print(f"Added spending:{description}, Amount:{amount}")
 
 def your_total_spendings(spendings):
+    """
+    Sums up the total amount of spendings
+    """
     sum = 0
     for spending in spendings:
         sum += spending["amount"]
@@ -14,6 +20,10 @@ def your_balance(budget, spendings):
     return budget - your_total_spendings(spendings)
 
 def display_budget_details(budget, spendings):
+    """
+    The user to input their budget amount from which all
+    spendings will be deducted
+    """
     print(f"Total budget: {budget}")
     print("Spendings:")
     for spending in spendings:
@@ -22,6 +32,10 @@ def display_budget_details(budget, spendings):
     print(f"Your remaining budget to spend: {your_balance(budget, spendings)}")
 
 def load_your_budget_data(filepath):
+    """ 
+    Loads the budget and spendings amount into a file so
+    when the app is refreshed the data is not lost.
+    """
     try:
         with open(filepath, 'r') as file:
             data = json.load(file)
@@ -34,6 +48,9 @@ def load_your_budget_data(filepath):
         """
         return 0, []  
 def save_your_budget(filepath, original_budget, spendings):
+    """ 
+    Saves the data to the json file
+    """
     data = {
         'original_budget': original_budget,
         'spendings': spendings
@@ -55,7 +72,7 @@ def main():
     
     while True:
         print("\n Choose what do you want to do.")
-        print("1. Add spending")
+        print("1. Add spending type and amount")
         print("2. Display budget details")
         print("3. Exit")
         choice = input("Enter you choice (1/2/3): ")
