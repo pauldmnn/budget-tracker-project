@@ -19,13 +19,26 @@ def display_budget_details(budget, spendings):
     print(f"Total amount spent: {your_total_spendings(spendings)}")
     print(f"Your remaining budget to spend: {your_balance(budget, spendings)}")
 
+def load_your_budget_data(filepath):
+    try:
+        with open(filepath, 'r') as file:
+            data = json.load(file)
+            return data['original_budget'], data['spendings']
+    
+    except (FileNotFoundError, json.JSONDecodeError):
+        """
+        Return default values if the file doesn't exist 
+        or is empty/corrupted
+        """
+        return 0, []  
 
 def main():
     """
     Runs the main function for the app
     """
     print("Welcome to your budget tracker")
-    original_budget = float(input("Please enter your original spending budget: "))
+    filepath = 'your_budget_data.json'
+    original_budget, spendings = load_your_budget_data(filepath)
     budget = original_budget
     spendings = []
 
