@@ -55,12 +55,13 @@ def load_your_budget_data(filepath):
         return 0, []
 
 
-def update_your_budget(filepath, original_budget):
+def update_your_budget(filepath, original_budget, spendings):
     """
     Updates the budget when choice 3 is selected
     """
     data = {
         'original_budget': original_budget,
+        'spendings': spendings
     }
     with open(filepath, 'w') as file:
         json.update(data, file)
@@ -93,7 +94,7 @@ def main():
         print("\n Choose what do you want to do.")
         print("1. Add spending type and amount")
         print("2. Display budget details")
-        print("3. Add more money to budget")
+        print("3. Add new budget")
         print("4. Exit")
         choice = input("Enter you choice (1/2/3/4): \n")
 
@@ -106,7 +107,9 @@ def main():
             display_budget_details(budget, spendings)
 
         elif choice == "3":
-            original_budget = float(input("Add more money to your budget: \n"))
+            original_budget = float(input("Reset and add new budget: \n"))
+            print("Once new budget is entered press enter")
+            print("Then select choice 4 and then refres the app")
 
         elif choice == "4":
             save_your_budget(filepath, original_budget, spendings)
