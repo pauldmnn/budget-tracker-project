@@ -78,7 +78,7 @@ def main():
     filepath = 'your_budget_data.json'
     original_budget, spendings = load_your_budget_data(filepath)
     if original_budget == 0:
-        original_budget = float(input("Please enter amount of money you have to spend: "))
+        original_budget = float(input("Please enter amount of money you have to spend: \n"))
     budget = original_budget
     
     while True:
@@ -87,18 +87,18 @@ def main():
         print("2. Display budget details")
         print("3. Add morne money to budget")
         print("4. Exit")
-        choice = input("Enter you choice (1/2/3/4): ")
+        choice = input("Enter you choice (1/2/3/4): \n")
 
         if choice == "1":
-            description = input("Add spending description: ")
-            amount = float(input("Enter spent amount: "))
+            description = input("Add spending description: \n")
+            amount = float(input("Enter spent amount: \n"))
             add_spending(spendings, description, amount)
 
         elif choice == "2":
             display_budget_details(budget, spendings)
 
         elif choice == "3":
-            original_budget = float(input("Please add more money to your budget: "))
+            original_budget = float(input("Please add more money to your budget: \n"))
              
         elif choice == "4":
             save_your_budget(filepath, original_budget, spendings)
