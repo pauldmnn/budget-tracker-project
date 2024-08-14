@@ -63,14 +63,12 @@ def save_your_budget(filepath, original_budget, spendings):
     """ 
     Saves the data to the json file
     """
-
     data = {
         'original_budget': original_budget,
         'spendings': spendings
     }
     with open(filepath, 'w') as file:
         json.dump(data, file, indent=4)
-
 
 def main():
     """
@@ -100,8 +98,7 @@ def main():
             display_budget_details(budget, spendings)
 
         elif choice == "3":
-            
-            original_budget = float(input("Please enter more money to your budget: "))
+            original_budget = float(input("Please add more money to your budget: "))
              
         elif choice == "4":
             save_your_budget(filepath, original_budget, spendings)
