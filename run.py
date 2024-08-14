@@ -78,6 +78,7 @@ def save_your_budget(filepath, original_budget, spendings):
     with open(filepath, 'w') as file:
         json.dump(data, file, indent=4)
 
+
 def reset_budget(filepath):
     """
     Resets the JSON file to make the budget and spendigs to zero
@@ -125,13 +126,14 @@ def main():
             original_budget += more_budget
             budget = original_budget
             update_your_budget(filepath, original_budget, spendings)
-            print(f"Added{more_budget} to the original budget. New budget {original_budget}")
+            print(f"Added £{more_budget} to original budget."
+                  f"New budget £{original_budget}")
 
         elif choice == "4":
             reset_budget(filepath)
             original_budget, spendings = load_your_budget_data(filepath)
-            budget = original_budget 
-            print("Budget and spendings have been reset") 
+            budget = original_budget
+            print("Budget and spendings have been reset")
 
         elif choice == "5":
             save_your_budget(filepath, original_budget, spendings)
