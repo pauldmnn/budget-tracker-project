@@ -18,4 +18,16 @@ Choice four is for the user to exit the app. When the user exits the app a goodb
 
 
 ## Features
+- User inputs their budget
 
+
+- User adds a description of what they spent theyr money
+- User adds the amount of money they spent
+
+
+- User can check their balance and see on what they spent their money
+
+- User can reset their budget and add a new budget
+- The user will constant see their spendings 
+
+- When the user will exit the app a goodye message will be printed

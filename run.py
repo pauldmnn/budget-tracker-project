@@ -64,7 +64,7 @@ def update_your_budget(filepath, original_budget, spendings):
         'spendings': spendings
     }
     with open(filepath, 'w') as file:
-        json.update(data, file)
+        json.dump(data, file, indent=4)
 
 
 def save_your_budget(filepath, original_budget, spendings):
@@ -94,8 +94,9 @@ def main():
         print("\n Choose what do you want to do.")
         print("1. Add spending type and amount")
         print("2. Display budget details")
-        print("3. Add new budget")
-        print("4. Exit")
+        print("3. Add more money to budget")
+        print("4. Reset the tracker and startb again")
+        print("5. Exit the tracker")
         choice = input("Enter you choice (1/2/3/4): \n")
 
         if choice == "1":
@@ -108,16 +109,22 @@ def main():
 
         elif choice == "3":
             original_budget = float(input("Reset and add new budget: \n"))
-            print("Once new budget is entered press enter")
-            print("Then select choice 4 and then refres the app")
+            original_budget += more_budget
+            budget = original_budget
+            update_your_budget(filepath, original_budget, spendings)
+            print(f"Added{more_budget} to the original budget. New budget {original_budget}")
 
         elif choice == "4":
+            original_budget, spendings = load_your_budget_data(filepath)  
+            print("Budget and spendings have been reset") 
+
+        elif choice == "5":
             save_your_budget(filepath, original_budget, spendings)
             print("You are exiting your budget tracker. Goodbye!")
             break
 
         else:
-            print("Wrong choice. Choose one of the following (1/2/3/4).")
+            print("Wrong choice. Choose one of the following (1/2/3/4/5).")
 
 if __name__ == "__main__":
     main()
