@@ -93,7 +93,7 @@ def main():
         print("\n Choose what do you want to do.")
         print("1. Add spending type and amount")
         print("2. Display budget details")
-        print("3. Add morne money to budget")
+        print("3. Add more money to budget")
         print("4. Exit")
         choice = input("Enter you choice (1/2/3/4): \n")
 
