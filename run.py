@@ -78,6 +78,19 @@ def save_your_budget(filepath, original_budget, spendings):
     with open(filepath, 'w') as file:
         json.dump(data, file, indent=4)
 
+def reset_budget(filepath):
+    """
+    Resets the JSON file to make the budget and spendigs to zero
+    """
+    main_budget = 0
+    main_spendings = []
+    data = {
+        'original_budget': main_budget,
+        'spendings': main_spendings
+        }
+    with open(filepath, 'w') as file:
+        json.dump(data, file, indent=4)
+
 
 def main():
     """
@@ -97,25 +110,27 @@ def main():
         print("3. Add more money to budget")
         print("4. Reset the tracker and startb again")
         print("5. Exit the tracker")
-        choice = input("Enter you choice (1/2/3/4): \n")
+        choice = input("Enter you choice (1/2/3/4/5): \n")
 
         if choice == "1":
             description = input("Add spending description: \n")
-            amount = float(input("Enter spent amount: \n"))
+            amount = float(input("Enter spent amount:£ \n"))
             add_spending(spendings, description, amount)
 
         elif choice == "2":
             display_budget_details(budget, spendings)
 
         elif choice == "3":
-            original_budget = float(input("Reset and add new budget: \n"))
+            more_budget = float(input("Add more amount to budget:£ \n"))
             original_budget += more_budget
             budget = original_budget
             update_your_budget(filepath, original_budget, spendings)
             print(f"Added{more_budget} to the original budget. New budget {original_budget}")
 
         elif choice == "4":
-            original_budget, spendings = load_your_budget_data(filepath)  
+            reset_budget(filepath)
+            original_budget, spendings = load_your_budget_data(filepath)
+            budget = original_budget 
             print("Budget and spendings have been reset") 
 
         elif choice == "5":
