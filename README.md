@@ -1,32 +1,21 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Budget Tracker Project
 
-Welcome,
+## The Budget Tracker Project is a Python application which runs in the Code Institute mock terminal on Heroku
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+## The user can input their budget and then add their spendings description and amount and the application will calculate the remaining budget. 
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## How the app works
+The user will input their origial budget and then they will be ascked to select one of four choices (1\2\3\4)
 
-## Creating the Heroku app
+The first choice is for ther user to add spending description once that is entered the the app will ask the user to enter the amount spent. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The second choice is for the user to check the budget balance and what were the spendings and amount spent. 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Choice three is for the user to add a new budget. The new budget will be visible once the app is exited 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Choice four is for the user to exit the app. When the user exits the app a goodbye message will be printed on the console
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## Features
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
