@@ -2,7 +2,8 @@ import json
 
 def add_spending(spendings, description, amount):
     """
-    For the user to dat the description and amount of spendings
+    For the user to input the description of spendings
+    and amount of spendings
     """
     spendings.append({"description": description, "amount": amount})
     print(f"Added spending:{description}, Amount:{amount}")
@@ -47,10 +48,22 @@ def load_your_budget_data(filepath):
         or is empty/corrupted
         """
         return 0, []  
+
+def update_your_budget(filepath, original_budget):
+    """
+    Updates the budget when choice 3 is selected
+    """
+    data = {
+        'original_budget': original_budget,
+    }
+    with open(filepath, 'w') as file:
+        json.update(data, file)
+
 def save_your_budget(filepath, original_budget, spendings):
     """ 
     Saves the data to the json file
     """
+
     data = {
         'original_budget': original_budget,
         'spendings': spendings
@@ -74,8 +87,9 @@ def main():
         print("\n Choose what do you want to do.")
         print("1. Add spending type and amount")
         print("2. Display budget details")
-        print("3. Exit")
-        choice = input("Enter you choice (1/2/3): ")
+        print("3. Add morne money to budget")
+        print("4. Exit")
+        choice = input("Enter you choice (1/2/3/4): ")
 
         if choice == "1":
             description = input("Add spending description: ")
@@ -84,8 +98,12 @@ def main():
 
         elif choice == "2":
             display_budget_details(budget, spendings)
-        
+
         elif choice == "3":
+            
+            original_budget = float(input("Please enter more money to your budget: "))
+             
+        elif choice == "4":
             save_your_budget(filepath, original_budget, spendings)
             print("You are exiting your budget tracker. Goodbye!")
             break

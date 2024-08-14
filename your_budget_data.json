@@ -1,0 +1,13 @@
+{
+    "original_budget": 400000.0,
+    "spendings": [
+        {
+            "description": "car",
+            "amount": 1000.0
+        },
+        {
+            "description": "carrr",
+            "amount": 1000.0
+        }
+    ]
+}
