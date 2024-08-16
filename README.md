@@ -9,18 +9,17 @@ The user can input their budget and then add their spendings description and amo
 ![Responsive view of Budget tracker](testing/devices.png)
 
 ## How the app works
-The user will input their origial budget and then they will be ascked to select one of four choices (1/2/3/4/5)
+The user will input their original budget and then they will be asked to select one of four choices (1/2/3/4/5)
 
-The first choice is for ther user to add spending description once that is entered the the app will ask the user to enter the amount spent. 
+The first choice is for the user to add spending description once that is entered the the app will ask the user to enter the amount spent. 
 
 The second choice is for the user to check the budget balance and what were the spendings and amount spent. 
 
-Choice three is for the user to add more amout to the original budget
+Choice three is for the user to add more amount to the original budget
 
 Choice four resets the budget and spendings to zero so the user can add a new budget and spendings
 
 Choice five is for the user to exit the app. When the user exits the app a goodbye message will be printed on the console
-
 
 ## Features
 - User inputs their budget.
@@ -45,12 +44,12 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 - The user can reset their budget to zero and then add a new budget.
 ![Choice four](testing/choice-four.png)
 
-- When the user will exit the app a goodye message will be printed.
+- When the user will exit the app a goodbye message will be printed.
 ![Choice five](testing/choice-five.png)
 
 ## Data model
 
-- I decided to use the Main function which checkes all the other function to ensure that the Budget tracker app runs correctly. 
+- I decided to use the Main function which checks all the other function to ensure that the Budget tracker app runs correctly. 
 
 - The main function also has print methods which prints instructions for the user. 
 
@@ -58,7 +57,7 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 
 ## Testing
 
-#### I have manualy tested the code
+#### I have manually tested the code
 
 - I have passed the code through PEP8 linter and confirmed there are no problems
 - Tested in my local terminal and in the Code Institute Heroku terminal
@@ -69,13 +68,13 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 
 - I found that in the "Add you budget" if a letter or a symbol was typed on the console an error was typed
 - In the Choice 1 the user was able to input a number or a symbol for the "Description of spendings".
-- When an amount was asked to be inputed the user was able to input letters or symbols as well as numbers
+- When an amount was asked to be inputted the user was able to input letters or symbols as well as numbers
 
 #### Bugs solved
 
-- I created an input validation for the original_budget variable so it only takes numbers. If anything else than numbers are introduced the console will print a message.
+- I created an input validation for the original_budget variable so it only takes numbers. If anything, else than numbers are introduced the console will print a message.
 
-- I created an input validation for the description so it only takes letters and spaces but cannot take empty spaces. If anything else than letters are introduced the console will print a message.
+- I created an input validation for the description so it only takes letters and spaces but cannot take empty spaces. If anything, else than letters are introduced the console will print a message.
 
 #### Remaining bugs
 
@@ -98,4 +97,6 @@ The project was deployed using Code Institute's mock terminal for Heroku
 
 ## Credits
 - Code Institute for the deployment terminal
-- Youtube and Google for various code assistance 
+- YouTube and Google for various code assistance 
+
+
