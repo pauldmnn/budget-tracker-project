@@ -130,7 +130,7 @@ def main():
     budget = original_budget
 
     while True:
-        print("\n Choose what do you want to do.")
+        print("\n Choose what do you want to do. \n")
         print("1. Add spending type and amount")
         print("2. Display budget details")
         print("3. Add more money to budget")
