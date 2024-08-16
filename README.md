@@ -76,8 +76,10 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 #### Bugs solved
 
 - I created an input validation for the original_budget variable so it only takes numbers. If anything, else than numbers are introduced the console will print a message.
+![Takes only numbers](testing/takes-only-numbers.png)
 
 - I created an input validation for the description so it only takes letters and spaces but cannot take empty spaces. If anything, else than letters are introduced the console will print a message.
+![Testing errors fixed](testing/testing-errors-fixed.png)
 
 #### Remaining bugs
 
@@ -86,17 +88,42 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 ### Validator testing
 
 - PEP8
-    - No errors were returned on PEP8online.com
+    - No errors were returned on [PEP8online.com](https://pep8ci.herokuapp.com/)
 
 ## Deployment
 
+The main branch of this repository is the most current version and has been used for the deployed version of the site.
+The Code Institute student template was used to create this project.
+
+[Code Institute Template](https://github.com/Code-Institute-Org/p3-template)
+
+1. Click **Use This Template** button.
+2. Give your repository a name, and description.
+3. Open [Github](https://github.com/) and log into your account.
+4. Click **New Workspace** button.
+5. Create a workspace from your project repository by creating a clone.
+
+### How to deploy using Heroku
+
 The project was deployed using Code Institute's mock terminal for Heroku 
-- Steps for deployment
-    - Fork and clone this repository
-    - Create new Heroku app
-    - Set the buildbacks for Python and Node.JS in that order 
-    - Link the Heroku app to the repository
-    - Click on Deploy
+1. Create new Heroku app
+2. Set the buildbacks for Python and Node.JS in that order 
+3. Link the Heroku app to your Github repository
+4. Click on Deploy Branch
+5. After Heroku installed all requirements click View
+
+### Creating a clone
+
+1. From the repository, click **Code**.
+2. In the **Clone >> HTTPS** section, copy the clone URL for the repository.
+3. Paste a link into the designated area on the github. 
+
+### Forking
+
+1. From the repository, click **Fork**.
+2. Give your repository a name.
+3. Click **Create fork**.
+
 
 ## Credits
 - Code Institute for the deployment terminal
