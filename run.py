@@ -140,7 +140,7 @@ def main():
 
         if choice == "1":
             while True:
-                description = input("Using wards please add a description of your spendings: \n")
+                description = input("Using letters please add a description of your spendings: \n")
                 if description_is_correct(description):
                     break
                 else:
