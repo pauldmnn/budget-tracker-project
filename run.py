@@ -1,5 +1,5 @@
 import json
-
+import re
 
 def is_number(input_str):
     """
@@ -140,7 +140,7 @@ def main():
 
         if choice == "1":
             while True:
-                description = input("Add spending description: \n")
+                description = input("Using wards please add a description of your spendings: \n")
                 if description_is_correct(description):
                     break
                 else:
