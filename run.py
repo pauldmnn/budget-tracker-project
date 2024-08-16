@@ -53,7 +53,7 @@ def display_budget_details(budget, spendings):
     for spending in spendings:
         print(f"- {spending['description']}: {spending['amount']}")
     print(f"Total amount spent: {your_total_spendings(spendings)}")
-    print(f"Your remaining budget to spend: {your_balance(budget, spendings)}")
+    print(f"Your remaining budget to spend is: {your_balance(budget, spendings)} \n")
 
 
 def load_your_budget_data(filepath):
@@ -135,7 +135,7 @@ def main():
         print("2. Display budget details")
         print("3. Add more money to budget")
         print("4. Reset the tracker and start again")
-        print("5. Exit the tracker")
+        print("5. Exit the tracker \n")
         choice = input("\n Enter you choice (1/2/3/4/5): \n")
 
         if choice == "1":
