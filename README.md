@@ -55,6 +55,9 @@ Choice five is for the user to exit the app. When the user exits the app a goodb
 
 - I have created a JSON file which updates and saves the data which the user inputs it in the terminal. The data is saved until the user chooses Choice 4 which resets the tracker and then exits the tracker. 
 
+- I have created a flowchart to display the thinking behind the app. 
+![Flowchart](testing/flowchart.png)
+
 ## Testing
 
 #### I have manually tested the code
