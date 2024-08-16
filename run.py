@@ -126,7 +126,7 @@ def main():
                 original_budget = float(original_budget_input)
                 break
             else:
-                print("\n Please enter a valid number \n")
+                print("\n Your entry is wrong. Please enter a valid number \n")
     budget = original_budget
 
     while True:
