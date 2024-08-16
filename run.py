@@ -1,5 +1,6 @@
 import json
 
+
 def is_number(input_str):
     """
     Checks if the input is a valid number
@@ -9,6 +10,15 @@ def is_number(input_str):
         return True
     except ValueError:
         return False
+
+
+def description_is_correct(input_str):
+    """
+    Checkes that the input uses only letters and spaces
+    """
+    return bool(re.match("^[A-Za-z ]+$",
+                input_str)) and input_str.strip() != ''
+
 
 def add_spending(spendings, description, amount):
     """
@@ -129,7 +139,12 @@ def main():
         choice = input("\n Enter you choice (1/2/3/4/5): \n")
 
         if choice == "1":
-            description = input("Add spending description: \n")
+            while True:
+                description = input("Add spending description: \n")
+                if description_is_correct(description):
+                    break
+                else:
+                    print("Please enter description using letters only")
             while True:
                 amount_input = input("Enter spent amount:£ \n")
                 if is_number(amount_input):
