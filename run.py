@@ -1,5 +1,14 @@
 import json
 
+def is_number(input_str):
+    """
+    Checks if the input is a valid number
+    """
+    try:
+        float(input_str)
+        return True
+    except ValueError:
+        return False
 
 def add_spending(spendings, description, amount):
     """
@@ -107,7 +116,7 @@ def main():
                 original_budget = float(original_budget_input)
                 break
             else:
-                print("Please enetr a valid number")
+                print("Please enter a valid number")
     budget = original_budget
 
     while True:
@@ -115,9 +124,9 @@ def main():
         print("1. Add spending type and amount")
         print("2. Display budget details")
         print("3. Add more money to budget")
-        print("4. Reset the tracker and startb again")
+        print("4. Reset the tracker and start again")
         print("5. Exit the tracker")
-        choice = input("Enter you choice (1/2/3/4/5): \n")
+        choice = input("\n Enter you choice (1/2/3/4/5): \n")
 
         if choice == "1":
             description = input("Add spending description: \n")
@@ -127,14 +136,20 @@ def main():
                     amount = float(amount_input)
                     break
                 else:
-                    print("Please enetr a valid number")
+                    print("Please enter a valid number")
             add_spending(spendings, description, amount)
 
         elif choice == "2":
             display_budget_details(budget, spendings)
 
         elif choice == "3":
-            more_budget = float(input("Add more amount to budget:£ \n"))
+            while True:
+                more_budget_input = input("Add more amount to budget:£ \n")
+                if is_number(more_budget_input):
+                    more_budget = float(more_budget_input)
+                    break
+                else:
+                    print("Please enter a valid number")
             original_budget += more_budget
             budget = original_budget
             update_your_budget(filepath, original_budget, spendings)
@@ -149,7 +164,7 @@ def main():
 
         elif choice == "5":
             save_your_budget(filepath, original_budget, spendings)
-            print("You are exiting your budget tracker. Goodbye!")
+            print("You are exiting your budget tracker. Goodbye! \n")
             break
 
         else:

@@ -1,0 +1,9 @@
+{
+    "original_budget": 2.0,
+    "spendings": [
+        {
+            "description": "1",
+            "amount": 5.0
+        }
+    ]
+}
