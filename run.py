@@ -116,7 +116,7 @@ def main():
     """
     Runs the main function for the app
     """
-    print("Welcome to your budget tracker")
+    print("Welcome to your budget tracker \n")
     filepath = 'your_budget_data.json'
     original_budget, spendings = load_your_budget_data(filepath)
     if original_budget == 0:
@@ -126,7 +126,7 @@ def main():
                 original_budget = float(original_budget_input)
                 break
             else:
-                print("Please enter a valid number")
+                print("\n Please enter a valid number \n")
     budget = original_budget
 
     while True:
@@ -140,18 +140,18 @@ def main():
 
         if choice == "1":
             while True:
-                description = input("Using letters please add a description of your spendings: \n")
+                description = input("Using letters, please add a description of your spendings: \n")
                 if description_is_correct(description):
                     break
                 else:
-                    print("Please enter description using letters only")
+                    print("\n Please enter description using letters only \n")
             while True:
                 amount_input = input("Enter spent amount:£ \n")
                 if is_number(amount_input):
                     amount = float(amount_input)
                     break
                 else:
-                    print("Please enter a valid number")
+                    print("\n Please enter a valid number \n")
             add_spending(spendings, description, amount)
 
         elif choice == "2":
@@ -164,7 +164,7 @@ def main():
                     more_budget = float(more_budget_input)
                     break
                 else:
-                    print("Please enter a valid number")
+                    print("\n Please enter a valid number \n")
             original_budget += more_budget
             budget = original_budget
             update_your_budget(filepath, original_budget, spendings)
@@ -175,15 +175,15 @@ def main():
             reset_budget(filepath)
             original_budget, spendings = load_your_budget_data(filepath)
             budget = original_budget
-            print("Budget and spendings have been reset")
+            print("\n Budget and spendings have been reset \n")
 
         elif choice == "5":
             save_your_budget(filepath, original_budget, spendings)
-            print("You are exiting your budget tracker. Goodbye! \n")
+            print("\n You are exiting your budget tracker. Goodbye! \n")
             break
 
         else:
-            print("Wrong choice. Choose one of the following (1/2/3/4/5).")
+            print("\n Wrong choice. Choose one of the following (1/2/3/4/5). \n")
 
 
 if __name__ == "__main__":
