@@ -102,6 +102,10 @@ def main():
     original_budget, spendings = load_your_budget_data(filepath)
     if original_budget == 0:
         original_budget = float(input("Please enter amount to spend: \n"))
+        try:
+            original_budget = float(input("Please enter amount to spend: \n"))
+        except ValueError:
+            print("Wrong input. Please enter a valid number")
     budget = original_budget
 
     while True:
