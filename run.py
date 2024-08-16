@@ -14,7 +14,7 @@ def is_number(input_str):
 
 def description_is_correct(input_str):
     """
-    Checkes that the input uses only letters and spaces
+    Checks that the input for description uses only letters and spaces
     """
     return bool(re.match("^[A-Za-z ]+$",
                 input_str)) and input_str.strip() != ''
